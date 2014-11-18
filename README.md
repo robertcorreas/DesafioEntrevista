@@ -9,6 +9,12 @@ O desafio consiste em criar uma aplicação desktop simples em WPF. A construç�
 - Conhecimento básico de git
 - Conhecimento da linguagem C# e XAML
 
+# Instruções
+
+- Faça um fork do repositório
+- Desenvolva a aplicação
+- Faça um pull request deste repositório com a sua implementação 
+
 # A aplicação
 
 Em resumo, trata-se de uma aplicação de janela única com a funcionalidade de visualizar curvas de dados (X e Y) em um gráfico e  alterar sua visualização: escala, cor, espessura, etc.
@@ -16,6 +22,10 @@ Em resumo, trata-se de uma aplicação de janela única com a funcionalidade de 
 ##  Requisitos
 
 Os requisitos foram desenvolvidos como histórias de usuário:
+
+*Legenda*
+- **US** -> User Stories -> História de usuário
+- **AT** -> Acceptance Test -> Teste de aceitação
 
 ```
 US1. COMO usuário POSSO visualizar uma curva em um gráfico PARA QUE eu possa conhecer seu comportamento.
@@ -85,6 +95,9 @@ AT5. DADO que existe uma curva plotada
    	 QUANDO configuro um valor de maxY/maxX/minY/minX para valores negativos
    	 ENTAO uma mensagem é mostrada ao usuário "Não é permitido valores negativos."
    	 E o eixo do gráfico não é alterado.
+
+OBS: Os valores literais usados neste teste de aceitação são meramente ilustrativos. Esses valores vão depender do dado de entrada.
+
 ```
 
 ```
@@ -98,7 +111,7 @@ AT1. DADO que existe uma curva plotada
 ```
 
 ```
-US7. COMO usuário POSSO filtrar dados que compõe a curva PARA QUE visualizar uma porção mais relevante da curva.
+US7. COMO usuário POSSO filtrar dados que compõe a curva PARA QUE possa visualizar uma porção mais relevante da curva.
 
 AT1. DADO que existe uma curva plotada
 	 QUANDO configuro um valor de minX para 3
@@ -124,6 +137,9 @@ AT5. DADO que existe uma curva plotada
    	 QUANDO configuro um valor de maxY/maxX/minY/minX do filtro para valores negativos
    	 ENTAO uma mensagem é mostrada ao usuário "Não é permitido valores negativos."
    	 E e o conjunto de dados que compõe a curva não é alterado.
+   	 
+OBS: Os valores literais usados neste teste de aceitação são meramente ilustrativos. Esses valores vão depender do dado de entrada.
+   	 
 ```
 
 ```
@@ -154,8 +170,10 @@ Nós desenvolvemos um wireframe como sugestão de layout mas sinta-se à vontade
   - A documentação é bem tranquila e a API não é dificil de usar.
   - Novamente, se prefirir, é permitido usar outras bibliotecas.
 
-### Observações
+### Observação
 
-Na pasta Input do repositório existe um XML que contém os dados para a curva a ser visualizada no aplicação. Leia com atenção o readme desta pasta para maiores informações.
+**Na pasta *Dados de entrada*, do repositório, existe um XML que contém os dados para a curva a ser visualizada no aplicação.**
+ 
+ *Boa Sorte!*
   
 
