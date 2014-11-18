@@ -13,7 +13,7 @@ O desafio consiste em criar uma aplicação desktop simples em WPF. A construç�
 
 Em resumo, trata-se de uma aplicação de janela única com a funcionalidade de visualizar curvas de dados (X e Y) em um gráfico e  alterar sua visualização: escala, cor, espessura, etc.
 
-##  Requsitos
+##  Requisitos
 
 Os requisitos foram desenvolvidos como histórias de usuário:
 
