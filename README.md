@@ -172,7 +172,7 @@ Nós desenvolvemos um wireframe como sugestão de layout mas sinta-se à vontade
 
 ### Observação
 
-**Na pasta *Dados de entrada*, do repositório, existe um XML que contém os dados para a curva a ser visualizada no aplicação.**
+**Na pasta *Dado de entrada*, do repositório, existe um XML que contém os dados para a curva a ser visualizada no aplicação.**
  
  *Boa Sorte!*
   
