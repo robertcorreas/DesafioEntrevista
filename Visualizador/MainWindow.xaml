@@ -1,0 +1,107 @@
+﻿<Window x:Class="Visualizador.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ig="http://schemas.infragistics.com/xaml"
+        xmlns:ViewModels="clr-namespace:Visualizador.ViewModels"
+        Title="MainWindow"
+        SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <ViewModels:ViewModel x:Key="ViewModel"/>
+    </Window.Resources> 
+    <Grid x:Name="Grid" DataContext="{StaticResource ViewModel}">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <GroupBox Header="Filtro">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Vertical">
+                                <Label>Min X:</Label>
+                                <TextBox Text="{Binding MinX}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Orientation="Vertical">
+                                <Label>Max X:</Label>
+                                <TextBox Text="{Binding MaxX}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Orientation="Vertical">
+                                <Label>Min Y:</Label>
+                                <TextBox Text="{Binding MinY}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+                                <Label>Max Y:</Label>
+                                <TextBox Text="{Binding MaxY}"/>
+                            </StackPanel>
+                        </Grid>
+                        <Button Click="Button_Click">Restaurar</Button>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Eixo">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Vertical">
+                                <Label>Min X:</Label>
+                                <TextBox/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Orientation="Vertical">
+                                <Label>Max X:</Label>
+                                <TextBox/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Orientation="Vertical">
+                                <Label>Min Y:</Label>
+                                <TextBox/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+                                <Label>Max Y:</Label>
+                                <TextBox/>
+                            </StackPanel>
+                        </Grid>
+                        <Label>Tipo escala</Label>
+                        <ListBox></ListBox>
+                        <Button>Restaurar</Button>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Propriedades">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label>Cor</Label>
+                        <ListBox Grid.Column="1"></ListBox>
+                        <Label Grid.Row="1">Tipo de linha</Label>
+                        <ListBox Grid.Column="1" Grid.Row="1"></ListBox>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+            <ig:XamDataChart Width="1000">
+                <ig:XamDataChart.Axes>
+                    <ig:NumericXAxis Label="{}" x:Name="XAxe"/>
+                    <ig:NumericYAxis Label="{}" x:Name="YAxe"/>
+                </ig:XamDataChart.Axes>
+                <ig:XamDataChart.Series>
+                    <ig:ScatterLineSeries ItemsSource="{Binding Pontos}" XAxis="{Binding ElementName=XAxe}" YAxis="{Binding ElementName=YAxe}" XMemberPath="X" YMemberPath="Y" MarkerType="Unset" LineJoin="Bevel" MarkerCollisionAvoidance="None" MarkerOutline="#FF190000" TrendLineBrush="#FFE50000" TrendLineDashCap="Round" TrendLineType="None" BorderThickness="0.5" BorderBrush="#FF64FA00" Brush="#FFF80016" Margin="0" MaximumMarkers="1500" Outline="#FF004B00" OpacityMask="#FF18CE18" Thickness="1" DashCap="Round" TrendLineZIndex="10" ClipToBounds="False" AreaFillOpacity="0.1">
+                    </ig:ScatterLineSeries>
+                </ig:XamDataChart.Series>
+            </ig:XamDataChart>
+        </StackPanel>
+    </Grid>
+</Window>

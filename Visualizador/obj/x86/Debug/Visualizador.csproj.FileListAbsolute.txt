@@ -1,0 +1,14 @@
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\bin\Debug\Visualizador.exe
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\bin\Debug\Visualizador.pdb
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\MainWindow.baml
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\MainWindow.g.cs
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\App.g.cs
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\Visualizador_MarkupCompile.cache
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\Visualizador.g.resources
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\Visualizador.Properties.Resources.resources
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\Visualizador.csproj.GenerateResource.Cache
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\Visualizador.exe.licenses
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\Visualizador.exe
+c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\Visualizador.pdb
+C:\Users\IDCE\Documents\Visual Studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\IDCE\Documents\Visual Studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\Visualizador_MarkupCompile.lref
