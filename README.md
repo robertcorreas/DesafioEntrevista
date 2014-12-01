@@ -5,7 +5,7 @@ O desafio consiste em criar uma aplicação desktop simples em WPF. A construç�
 - Entrosamento com programação orientada a objetos
 - Preocupação com encapsulamento, coesão e acoplamento
 - Organização e manutenabilidade do código
-- Conhecimento e uso de GUI Architectures *MVVM | MPV | MVP(PV)*
+- Conhecimento e uso de GUI Architectures *MVVM | MVP | MVP(PV)*
 - Conhecimento básico de git
 - Conhecimento da linguagem C# e XAML
 
