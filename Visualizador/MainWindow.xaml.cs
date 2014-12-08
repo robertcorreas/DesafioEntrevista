@@ -15,7 +15,6 @@ namespace Visualizador
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ((ViewModel)DataContext).Restaurar();
         }
     }
 }
