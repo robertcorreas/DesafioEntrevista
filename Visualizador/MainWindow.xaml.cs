@@ -10,12 +10,12 @@ namespace Visualizador
     {
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ((ViewModel)Grid.DataContext).Restaurar();
+            ((ViewModel)DataContext).Restaurar();
         }
     }
 }

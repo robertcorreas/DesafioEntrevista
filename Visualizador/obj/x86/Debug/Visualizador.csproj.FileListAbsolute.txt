@@ -12,3 +12,17 @@ c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\ob
 c:\users\idce\documents\visual studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\Visualizador.pdb
 C:\Users\IDCE\Documents\Visual Studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\IDCE\Documents\Visual Studio 2010\Projects\Visualizador\Visualizador\obj\x86\Debug\Visualizador_MarkupCompile.lref
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\bin\Debug\MainWindow.xaml.cs
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\bin\Debug\Visualizador.exe
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\bin\Debug\Visualizador.pdb
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\App.g.cs
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador_MarkupCompile.cache
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador_MarkupCompile.lref
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\MainWindow.baml
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador.g.resources
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador.Properties.Resources.resources
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador.csproj.GenerateResource.Cache
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador.exe.licenses
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador.exe
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador.pdb
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador.csprojResolveAssemblyReference.cache
