@@ -64,9 +64,9 @@
                 <GradientStop Color="#FF386a23" Offset="1" />
             </LinearGradientBrush>
         </x:Array>
-        <ObjectDataProvider MethodName="GetValues"
-                    ObjectType="{x:Type system:Enum}"
-                    x:Key="Escalas">
+        <ObjectDataProvider x:Key="Escalas"
+                            MethodName="GetValues"
+                            ObjectType="{x:Type system:Enum}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="viewModels:Escala" />
             </ObjectDataProvider.MethodParameters>
@@ -175,7 +175,7 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                         <Label Grid.Row="2">Tipo de série</Label>
-                        <ComboBox x:Name="TipoDeSerieComboBox" Grid.Column="1" Grid.Row="2" SelectedIndex="0" ItemsSource="{Binding Source={StaticResource Escalas}}" Selected="{Binding Escala}"/>
+                        <ComboBox x:Name="TipoDeSerieComboBox" Grid.Column="1" Grid.Row="2" SelectedIndex="0" ItemsSource="{Binding Source={StaticResource Escalas}}" SelectedItem="{Binding Escala}"/>
                     </Grid>
                 </GroupBox>
             </StackPanel>
