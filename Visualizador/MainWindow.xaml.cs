@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using Visualizador.ViewModels;
 
 namespace Visualizador
@@ -15,6 +16,7 @@ namespace Visualizador
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Environment.Exit(1);
         }
     }
 }

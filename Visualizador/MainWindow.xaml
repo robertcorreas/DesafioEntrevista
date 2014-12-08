@@ -184,11 +184,11 @@
                     <Rect X="0" Y="0" Height="1" Width="1"/>
                 </ig:XamDataChart.WindowRect>
                 <ig:XamDataChart.Axes>
-                    <ig:NumericXAxis x:Name="XAxe" MaximumValue="{Binding EixoXMax, Mode=TwoWay}" MinimumValue="{Binding EixoXMin}" Interval="200"/>
+                    <ig:NumericXAxis x:Name="XAxe" MaximumValue="{Binding EixoXMax}" MinimumValue="{Binding EixoXMin}" Interval="200"/>
                     <ig:NumericYAxis x:Name="YAxe" MaximumValue="{Binding EixoYMax}" MinimumValue="{Binding EixoYMin}" Interval="20"/>
                 </ig:XamDataChart.Axes>
                 <ig:XamDataChart.Series>
-                    <ig:ScatterLineSeries ItemsSource="{Binding Pontos}" XMemberPath="X" YMemberPath="Y"
+                    <ig:ScatterLineSeries ItemsSource="{Binding PontosNaEscalaNoFiltro}" XMemberPath="X" YMemberPath="Y"
                                           XAxis="{Binding ElementName=XAxe}" YAxis="{Binding ElementName=YAxe}" MarkerType="None"
                                           DashArray="{Binding ElementName=TiposDeLinhaComboBox, Path=SelectedItem}"
                                           Brush="{Binding ElementName=CorComboBox, Path=SelectedItem}"
