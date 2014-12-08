@@ -64,7 +64,13 @@
                 <GradientStop Color="#FF386a23" Offset="1" />
             </LinearGradientBrush>
         </x:Array>
-        <local:DataChartStrings x:Key="Strings"/>
+        <ObjectDataProvider MethodName="GetValues"
+                    ObjectType="{x:Type system:Enum}"
+                    x:Key="Escalas">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="viewModels:Escala" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
     </Window.Resources> 
     <Window.DataContext>
         <StaticResource ResourceKey="ViewModel"/>
@@ -169,13 +175,7 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                         <Label Grid.Row="2">Tipo de série</Label>
-                        <ComboBox x:Name="TipoDeSerieComboBox" Grid.Column="1" Grid.Row="2" SelectedIndex="0">
-                            <ComboBoxItem Tag="None">Normal</ComboBoxItem>
-                            <ComboBoxItem Tag="CubicFit">Cúbica</ComboBoxItem>
-                            <ComboBoxItem Tag="ExponentialFit">Exponencial</ComboBoxItem>
-                            <ComboBoxItem Tag="LinearFit">Linear</ComboBoxItem>
-                            <ComboBoxItem Tag="LogarithmicFit">Logarítmica</ComboBoxItem>
-                        </ComboBox>
+                        <ComboBox x:Name="TipoDeSerieComboBox" Grid.Column="1" Grid.Row="2" SelectedIndex="0" ItemsSource="{Binding Source={StaticResource Escalas}}" Selected="{Binding Escala}"/>
                     </Grid>
                 </GroupBox>
             </StackPanel>
