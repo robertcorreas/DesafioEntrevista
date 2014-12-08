@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ig="http://schemas.infragistics.com/xaml"
         xmlns:viewModels="clr-namespace:Visualizador.ViewModels"
+        xmlns:local="clr-namespace:Visualizador"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         Title="MainWindow"
         SizeToContent="WidthAndHeight">
@@ -63,6 +64,7 @@
                 <GradientStop Color="#FF386a23" Offset="1" />
             </LinearGradientBrush>
         </x:Array>
+        <local:DataChartStrings x:Key="Strings"/>
     </Window.Resources> 
     <Window.DataContext>
         <StaticResource ResourceKey="ViewModel"/>
@@ -166,6 +168,14 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
+                        <Label Grid.Row="2">Tipo de série</Label>
+                        <ComboBox x:Name="TipoDeSerieComboBox" Grid.Column="1" Grid.Row="2" SelectedIndex="0">
+                            <ComboBoxItem Tag="None">Normal</ComboBoxItem>
+                            <ComboBoxItem Tag="CubicFit">Cúbica</ComboBoxItem>
+                            <ComboBoxItem Tag="ExponentialFit">Exponencial</ComboBoxItem>
+                            <ComboBoxItem Tag="LinearFit">Linear</ComboBoxItem>
+                            <ComboBoxItem Tag="LogarithmicFit">Logarítmica</ComboBoxItem>
+                        </ComboBox>
                     </Grid>
                 </GroupBox>
             </StackPanel>
@@ -178,7 +188,11 @@
                     <ig:NumericYAxis x:Name="YAxe" MaximumValue="{Binding MaxY}" MinimumValue="{Binding MinY}" Interval="20"/>
                 </ig:XamDataChart.Axes>
                 <ig:XamDataChart.Series>
-                    <ig:ScatterLineSeries ItemsSource="{Binding Pontos}" XMemberPath="X" YMemberPath="Y" XAxis="{Binding ElementName=XAxe}" YAxis="{Binding ElementName=YAxe}" MarkerType="None" DashArray="{Binding ElementName=TiposDeLinhaComboBox, Path=SelectedItem}" Brush="{Binding ElementName=CorComboBox, Path=SelectedItem}" Thickness="3"/>
+                    <ig:ScatterLineSeries ItemsSource="{Binding Pontos}" XMemberPath="X" YMemberPath="Y"
+                                          XAxis="{Binding ElementName=XAxe}" YAxis="{Binding ElementName=YAxe}" MarkerType="None"
+                                          DashArray="{Binding ElementName=TiposDeLinhaComboBox, Path=SelectedItem}"
+                                          Brush="{Binding ElementName=CorComboBox, Path=SelectedItem}"
+                                          Thickness="3"/>
                 </ig:XamDataChart.Series>
             </ig:XamDataChart>
         </StackPanel>

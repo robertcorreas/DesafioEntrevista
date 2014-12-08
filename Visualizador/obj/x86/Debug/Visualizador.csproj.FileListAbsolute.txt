@@ -26,3 +26,4 @@ C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Vis
 C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador.exe
 C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador.pdb
 C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador.csprojResolveAssemblyReference.cache
+C:\Users\Jyc\Desktop\Desafio\Desafio\Visualizador\Visualizador\obj\x86\Debug\Visualizador.DataChartStrings.resources
