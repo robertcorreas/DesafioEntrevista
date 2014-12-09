@@ -109,8 +109,8 @@ namespace Visualizador2.models
         public Model()
         {
             string filePath = @"Dados da curva.xml";
-            string folderPath = @"C:\Users\Jyc\Documents\visual studio 2012\Projects\Visualizador2\Visualizador2\models\";
-            filePath = folderPath + filePath;
+            //string folderPath = @"C:\Users\Jyc\Documents\visual studio 2012\Projects\Visualizador2\Visualizador2\models\";
+            //filePath = folderPath + filePath;
 
             _pontos = ((Curva)new XmlSerializer(typeof(Curva)).Deserialize(new StreamReader(filePath))).Pontos;
 
