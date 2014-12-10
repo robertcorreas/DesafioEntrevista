@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace Visualizador.viewModels
 {
@@ -13,42 +14,44 @@ namespace Visualizador.viewModels
             }
             set
             {
+                if (value > FiltroMaxX) throw new ArgumentException("O valor deve ser inferior à " + FiltroMaxX);
                 _filtroMinX = value;
-                NotifyPropertyChanged("FiltroMinX");
-                NotifyPropertyChanged("PontosNaEscalaNoFiltro");
             }
         }
+
         private ushort _filtroMaxX;
         public ushort FiltroMaxX
         {
             get { return _filtroMaxX; }
             set
             {
+                if (value < FiltroMinX) throw new ArgumentException("O valor deve ser superior à " + FiltroMinX);
                 _filtroMaxX = value;
-                NotifyPropertyChanged("FiltroMaxX");
-                NotifyPropertyChanged("PontosNaEscalaNoFiltro");
             }
         }
+
         private decimal _filtroMinY;
         public decimal FiltroMinY
         {
-            get { return _filtroMinY; }
+            get
+            {
+                return _filtroMinY;
+            }
             set
             {
+                if (value > FiltroMaxY) throw new ArgumentException("O valor deve ser inferior à " + FiltroMaxY);
                 _filtroMinY = value;
-                NotifyPropertyChanged("FiltroMinY");
-                NotifyPropertyChanged("PontosNaEscalaNoFiltro");
             }
         }
+
         private decimal _filtroMaxY;
         public decimal FiltroMaxY
         {
             get { return _filtroMaxY; }
             set
             {
+                if (value < FiltroMinY) throw new ArgumentException("O valor deve ser superior à " + FiltroMinY);
                 _filtroMaxY = value;
-                NotifyPropertyChanged("FiltroMaxY");
-                NotifyPropertyChanged("PontosNaEscalaNoFiltro");
             }
         }
 
@@ -58,6 +61,14 @@ namespace Visualizador.viewModels
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public FiltroViewModel()
+        {
+            FiltroMinX = ushort.MinValue;
+            FiltroMaxX = ushort.MaxValue;
+            FiltroMinY = decimal.MinValue;
+            FiltroMaxY = decimal.MaxValue;
         }
     }
 }

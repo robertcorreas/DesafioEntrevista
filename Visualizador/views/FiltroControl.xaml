@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <Label>Min x:</Label>
         <Label Grid.Column="1">Max X:</Label>
-        <TextBox Text="{Binding FiltroMinX, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" SourceUpdated="OnSourceUpdated" Grid.Row="1"/>
+        <TextBox Text="{Binding FiltroMinX, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True}" SourceUpdated="OnSourceUpdated" Grid.Row="1"/>
         <TextBox Text="{Binding FiltroMaxX, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" SourceUpdated="OnSourceUpdated" Grid.Column="1" Grid.Row="1"/>
         <Label Grid.Row="2">Min Y:</Label>
         <Label Grid.Column="1" Grid.Row="2">Max Y:</Label>

@@ -19,12 +19,12 @@
         </Grid.RowDefinitions>
         <Label>Min x:</Label>
         <Label Grid.Column="1">Max X:</Label>
-        <TextBox x:Name="MinXTextBox" Grid.Row="1" Text="{Binding EixoMinX, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" SourceUpdated="OnSourceUpdated"/>
-        <TextBox x:Name="MaxXTextBox" Grid.Column="1" Grid.Row="1" Text="{Binding EixoMaxX, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" SourceUpdated="OnSourceUpdated"/>
+        <TextBox x:Name="MinXTextBox" Grid.Row="1" Text="{Binding EixoMinX, NotifyOnSourceUpdated=True, ValidatesOnExceptions=True}" SourceUpdated="OnSourceUpdated"/>
+        <TextBox x:Name="MaxXTextBox" Grid.Column="1" Grid.Row="1" Text="{Binding EixoMaxX, NotifyOnSourceUpdated=True}" SourceUpdated="OnSourceUpdated"/>
         <Label Grid.Row="2">Min Y:</Label>
         <Label Grid.Column="1" Grid.Row="2">Max Y:</Label>
-        <TextBox x:Name="MinYTextBox" Grid.Row="3" Text="{Binding EixoMinY, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" SourceUpdated="OnSourceUpdated"/>
-        <TextBox x:Name="MaxYTextBox" Grid.Column="1" Grid.Row="3"  Text="{Binding EixoMaxY, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" SourceUpdated="OnSourceUpdated"/>
+        <TextBox x:Name="MinYTextBox" Grid.Row="3" Text="{Binding EixoMinY, NotifyOnSourceUpdated=True}" SourceUpdated="OnSourceUpdated"/>
+        <TextBox x:Name="MaxYTextBox" Grid.Column="1" Grid.Row="3"  Text="{Binding EixoMaxY, NotifyOnSourceUpdated=True}" SourceUpdated="OnSourceUpdated"/>
         <Button Grid.ColumnSpan="2" Grid.Row="4" Click="Button_Click">Restaurar</Button>
     </Grid>
 </UserControl>

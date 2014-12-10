@@ -4,34 +4,33 @@
         xmlns:models="clr-namespace:Visualizador.viewModels"
         xmlns:views="clr-namespace:Visualizador.views"
         xmlns:ig="http://schemas.infragistics.com/xaml"
-        Title="Visualizador de Gráficos" SizeToContent="WidthAndHeight" ContentRendered="Window_ContentRendered">
+        Title="Visualizador de Gráficos" SizeToContent="WidthAndHeight"
+        ResizeMode="CanMinimize"
+        ContentRendered="Window_ContentRendered">
     <Grid>
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical">
             <GroupBox Header="Filtro">
-                <views:FiltroControl x:Name="filtroControl" ClicouRestaurar="FiltroControl_OnClicouRestaurar" InseriuCoordenada="OnInseriuCoordenada"/>
+                <views:FiltroControl x:FieldModifier="public" x:Name="filtroControl" ClicouRestaurar="FiltroControl_OnClicouRestaurar" InseriuCoordenada="OnInseriuCoordenada"/>
             </GroupBox>
                 <GroupBox Header="Eixo">
-                    <views:EixoControl x:Name="eixoControl" ClicouRestaurar="EixoControl_OnClicouRestaurar" InseriuCoordenada="OnInseriuCoordenada"/>
+                    <views:EixoControl x:FieldModifier="public" x:Name="eixoControl" ClicouRestaurar="EixoControl_OnClicouRestaurar" InseriuCoordenada="OnInseriuCoordenada"/>
                 </GroupBox>
                 <GroupBox Header="Propriedades">
-                <views:PropriedadesControl x:Name="propriedadesControl" SelecionouEscala="OnSelecionouEscala" Selecionou="OnSelecionou"/>
+                    <views:PropriedadesControl x:FieldModifier="public" x:Name="propriedadesControl" SelecionouEscala="OnSelecionouEscala" Selecionou="OnSelecionou"/>
             </GroupBox>
         </StackPanel>
             <ig:XamDataChart Width="800">
-                <ig:XamDataChart.WindowRect>
-                    <Rect X="0" Y="0" Height="1" Width="1"/>
-                </ig:XamDataChart.WindowRect>
                 <ig:XamDataChart.Axes>
                     <ig:NumericXAxis x:Name="XAxe" MaximumValue="{Binding EixoXMax}" MinimumValue="{Binding EixoXMin}" Interval="200"/>
                     <ig:NumericYAxis x:Name="YAxe" MaximumValue="{Binding EixoYMax}" MinimumValue="{Binding EixoYMin}" Interval="20"/>
                 </ig:XamDataChart.Axes>
                 <ig:XamDataChart.Series>
-                    <ig:ScatterLineSeries ItemsSource="{Binding PontosNaEscalaNoFiltro}" XMemberPath="X" YMemberPath="Y"
+                    <ig:ScatterLineSeries x:FieldModifier="public" x:Name="serie" ItemsSource="{Binding PontosNaEscalaNoFiltro}" XMemberPath="X" YMemberPath="Y"
                                           XAxis="{Binding ElementName=XAxe}" YAxis="{Binding ElementName=YAxe}" MarkerType="None"
                                           DashArray="{Binding Tracejado}"
                                           Brush="{Binding Cor}"
-                                          Thickness="3"/>
+                                          Thickness="2"/>
                 </ig:XamDataChart.Series>
             </ig:XamDataChart>
         </StackPanel>

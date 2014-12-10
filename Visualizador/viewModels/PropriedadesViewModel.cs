@@ -12,44 +12,9 @@ namespace Visualizador.viewModels
 {
     public class PropriedadesViewModel : INotifyPropertyChanged
     {
-        private Escala _escalaSelecionada;
-        public Escala EscalaSelecionada
-        {
-            get { return _escalaSelecionada; }
-            set
-            {
-                _escalaSelecionada = value;
-                NotifyPropertyChanged("Escala");
-            }
-        }
-
-        private object _corSelecionada;
-        public object CorSelecionada
-        {
-            get
-            {
-                return _corSelecionada;
-            }
-            set
-            {
-                _corSelecionada = value;
-                NotifyPropertyChanged("CorSelecionada");
-            }
-        }
-
-        private string _tracejadoSelecionado;
-        public string TracejadoSelecionado
-        {
-            get
-            {
-                return _tracejadoSelecionado;
-            }
-            set
-            {
-                _tracejadoSelecionado = value;
-                NotifyPropertyChanged("TracejadoSelecionado");
-            }
-        }
+        public Escala EscalaSelecionada { get; set; }
+        public object CorSelecionada { get; set; }
+        public string TracejadoSelecionado { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

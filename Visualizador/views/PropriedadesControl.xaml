@@ -82,7 +82,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Label>Cor</Label>
-        <ComboBox x:Name="CorComboBox" Grid.Row="0" Grid.Column="1" SelectedIndex="0" ItemsSource="{StaticResource Cores}" SelectedItem="{Binding CorSelecionada}" SelectionChanged="ComboBox_OnSelectionChanged">
+        <ComboBox x:FieldModifier="public" x:Name="CorComboBox" Grid.Row="0" Grid.Column="1" SelectedIndex="0" ItemsSource="{StaticResource Cores}" SelectedItem="{Binding CorSelecionada}" SelectionChanged="ComboBox_OnSelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="Transparent">
@@ -92,7 +92,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Label Grid.Row="1">Tracejado</Label>
-        <ComboBox x:Name="TracejadoComboBox" Grid.Row="1" Grid.Column="1" SelectedIndex="0" ItemsSource="{StaticResource TiposDeLinha}" SelectedItem="{Binding TracejadoSelecionado}" SelectionChanged="ComboBox_OnSelectionChanged">
+        <ComboBox x:FieldModifier="public" x:Name="TracejadoComboBox" Grid.Row="1" Grid.Column="1" SelectedIndex="0" ItemsSource="{StaticResource TiposDeLinha}" SelectedItem="{Binding TracejadoSelecionado}" SelectionChanged="ComboBox_OnSelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid HorizontalAlignment="Stretch" Background="Transparent">

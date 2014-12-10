@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace Visualizador.viewModels
 {
@@ -13,42 +14,44 @@ namespace Visualizador.viewModels
             }
             set
             {
+                if (value > EixoMaxX) throw new ArgumentException("O valor deve ser inferior à " + EixoMaxX);
                 _eixoMinX = value;
-                NotifyPropertyChanged("EixoMinX");
-                NotifyPropertyChanged("PontosNaEscalaNoEixo");
             }
         }
+
         private int _eixoMaxX;
         public int EixoMaxX
         {
             get { return _eixoMaxX; }
             set
             {
+                if (value < EixoMinX) throw new ArgumentException("O valor deve ser superior à " + EixoMinX);
                 _eixoMaxX = value;
-                NotifyPropertyChanged("EixoMaxX");
-                NotifyPropertyChanged("PontosNaEscalaNoEixo");
             }
         }
+
         private int _eixoMinY;
         public int EixoMinY
         {
-            get { return _eixoMinY; }
+            get
+            {
+                return _eixoMinY;
+            }
             set
             {
+                if (value > EixoMaxY) throw new ArgumentException("O valor deve ser inferior à " + EixoMaxY);
                 _eixoMinY = value;
-                NotifyPropertyChanged("EixoMinY");
-                NotifyPropertyChanged("PontosNaEscalaNoEixo");
             }
         }
+
         private int _eixoMaxY;
         public int EixoMaxY
         {
             get { return _eixoMaxY; }
             set
             {
+                if (value < EixoMinY) throw new ArgumentException("O valor deve ser superior à " + EixoMinY);
                 _eixoMaxY = value;
-                NotifyPropertyChanged("EixoMaxY");
-                NotifyPropertyChanged("PontosNaEscalaNoEixo");
             }
         }
 
@@ -58,6 +61,14 @@ namespace Visualizador.viewModels
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public EixoViewModel()
+        {
+            EixoMinX = int.MinValue;
+            EixoMaxX = int.MaxValue;
+            EixoMinY = int.MinValue;
+            EixoMaxY = int.MaxValue;
         }
     }
 }
