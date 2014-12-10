@@ -19,7 +19,7 @@ namespace Visualizador.models
         
     public Model()
         {
-            string filePath = @"Dados da curva.xml";
+            string filePath = @"../../models/Dados da curva.xml";
             model = (Curva) new XmlSerializer(typeof(Curva)).Deserialize(new StreamReader(filePath));
         }
     }
