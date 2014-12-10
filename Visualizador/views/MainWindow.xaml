@@ -30,7 +30,7 @@
                                           XAxis="{Binding ElementName=XAxe}" YAxis="{Binding ElementName=YAxe}" MarkerType="None"
                                           DashArray="{Binding Tracejado}"
                                           Brush="{Binding Cor}"
-                                          Thickness="2"/>
+                                          Thickness="1"/>
                 </ig:XamDataChart.Series>
             </ig:XamDataChart>
         </StackPanel>

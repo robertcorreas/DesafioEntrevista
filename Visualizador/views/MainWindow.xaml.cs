@@ -28,6 +28,14 @@ namespace Visualizador.views
 
         public void OnSelecionouEscala(object sender, SelecionouEscalaArgs args)
         {
+            mainViewModel.EixoXMin = int.MinValue;
+            mainViewModel.EixoXMax = int.MaxValue;
+            mainViewModel.EixoYMin = int.MinValue;
+            mainViewModel.EixoYMax = int.MaxValue;
+            XAxe.MinimumValue = int.MinValue;
+            XAxe.MaximumValue = int.MaxValue;
+            YAxe.MinimumValue = int.MinValue;
+            YAxe.MaximumValue = int.MaxValue;
             RestaurarEixo();
             RestaurarFiltro();
             mainViewModel.NotifyPropertiesChanged();

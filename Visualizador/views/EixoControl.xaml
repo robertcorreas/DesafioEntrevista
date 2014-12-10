@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
         <Label>Min x:</Label>
         <Label Grid.Column="1">Max X:</Label>
-        <TextBox x:Name="MinXTextBox" Grid.Row="1" Text="{Binding EixoMinX, NotifyOnSourceUpdated=True, ValidatesOnExceptions=True}" SourceUpdated="OnSourceUpdated"/>
+        <TextBox x:Name="MinXTextBox" Grid.Row="1" Text="{Binding EixoMinX, NotifyOnSourceUpdated=True}" SourceUpdated="OnSourceUpdated"/>
         <TextBox x:Name="MaxXTextBox" Grid.Column="1" Grid.Row="1" Text="{Binding EixoMaxX, NotifyOnSourceUpdated=True}" SourceUpdated="OnSourceUpdated"/>
         <Label Grid.Row="2">Min Y:</Label>
         <Label Grid.Column="1" Grid.Row="2">Max Y:</Label>

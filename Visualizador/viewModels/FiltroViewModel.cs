@@ -1,12 +1,15 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Runtime.Versioning;
+using System.Windows.Forms;
+using Visualizador.Properties;
 
 namespace Visualizador.viewModels
 {
     public class FiltroViewModel : INotifyPropertyChanged
     {
-        private ushort _filtroMinX;
-        public ushort FiltroMinX
+        private int _filtroMinX;
+        public int FiltroMinX
         {
             get
             {
@@ -14,18 +17,27 @@ namespace Visualizador.viewModels
             }
             set
             {
-                if (value > FiltroMaxX) throw new ArgumentException("O valor deve ser inferior à " + FiltroMaxX);
+                if (value < 0)
+                {
+                    System.Windows.MessageBox.Show(Resources.RangeExceptionMessage);
+                    throw new ArgumentException(Resources.RangeExceptionMessage);
+                }
                 _filtroMinX = value;
             }
         }
 
-        private ushort _filtroMaxX;
-        public ushort FiltroMaxX
+        private int _filtroMaxX;
+        public int FiltroMaxX
         {
             get { return _filtroMaxX; }
             set
             {
-                if (value < FiltroMinX) throw new ArgumentException("O valor deve ser superior à " + FiltroMinX);
+                if (value < 0)
+                {
+                    System.Windows.MessageBox.Show(Resources.RangeExceptionMessage);
+                    throw new ArgumentException(Resources.RangeExceptionMessage);
+                }
+
                 _filtroMaxX = value;
             }
         }
@@ -39,7 +51,12 @@ namespace Visualizador.viewModels
             }
             set
             {
-                if (value > FiltroMaxY) throw new ArgumentException("O valor deve ser inferior à " + FiltroMaxY);
+                if (value < 0)
+                {
+                    System.Windows.MessageBox.Show(Resources.RangeExceptionMessage);
+                    throw new ArgumentException(Resources.RangeExceptionMessage);
+                }
+
                 _filtroMinY = value;
             }
         }
@@ -50,7 +67,11 @@ namespace Visualizador.viewModels
             get { return _filtroMaxY; }
             set
             {
-                if (value < FiltroMinY) throw new ArgumentException("O valor deve ser superior à " + FiltroMinY);
+                if (value < 0)
+                {
+                    System.Windows.MessageBox.Show(Resources.RangeExceptionMessage);
+                    throw new ArgumentException(Resources.RangeExceptionMessage);
+                }
                 _filtroMaxY = value;
             }
         }
@@ -61,14 +82,6 @@ namespace Visualizador.viewModels
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public FiltroViewModel()
-        {
-            FiltroMinX = ushort.MinValue;
-            FiltroMaxX = ushort.MaxValue;
-            FiltroMinY = decimal.MinValue;
-            FiltroMaxY = decimal.MaxValue;
         }
     }
 }

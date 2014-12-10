@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Windows.Media;
+using Visualizador.Properties;
 
 namespace Visualizador.viewModels
 {
@@ -14,7 +16,11 @@ namespace Visualizador.viewModels
             }
             set
             {
-                if (value > EixoMaxX) throw new ArgumentException("O valor deve ser inferior à " + EixoMaxX);
+                if (value < 0)
+                {
+                    System.Windows.MessageBox.Show(Resources.RangeExceptionMessage);
+                    throw new ArgumentException(Resources.RangeExceptionMessage);
+                }
                 _eixoMinX = value;
             }
         }
@@ -25,7 +31,11 @@ namespace Visualizador.viewModels
             get { return _eixoMaxX; }
             set
             {
-                if (value < EixoMinX) throw new ArgumentException("O valor deve ser superior à " + EixoMinX);
+                if (value < 0)
+                {
+                    System.Windows.MessageBox.Show(Resources.RangeExceptionMessage);
+                    throw new ArgumentException(Resources.RangeExceptionMessage);
+                }
                 _eixoMaxX = value;
             }
         }
@@ -39,7 +49,11 @@ namespace Visualizador.viewModels
             }
             set
             {
-                if (value > EixoMaxY) throw new ArgumentException("O valor deve ser inferior à " + EixoMaxY);
+                if (value < 0)
+                {
+                    System.Windows.MessageBox.Show(Resources.RangeExceptionMessage);
+                    throw new ArgumentException(Resources.RangeExceptionMessage);
+                }
                 _eixoMinY = value;
             }
         }
@@ -50,7 +64,11 @@ namespace Visualizador.viewModels
             get { return _eixoMaxY; }
             set
             {
-                if (value < EixoMinY) throw new ArgumentException("O valor deve ser superior à " + EixoMinY);
+                if (value < 0)
+                {
+                    System.Windows.MessageBox.Show(Resources.RangeExceptionMessage);
+                    throw new ArgumentException(Resources.RangeExceptionMessage);
+                }
                 _eixoMaxY = value;
             }
         }
@@ -61,14 +79,6 @@ namespace Visualizador.viewModels
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public EixoViewModel()
-        {
-            EixoMinX = int.MinValue;
-            EixoMaxX = int.MaxValue;
-            EixoMinY = int.MinValue;
-            EixoMaxY = int.MaxValue;
         }
     }
 }
