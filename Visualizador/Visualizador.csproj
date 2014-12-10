@@ -7,7 +7,7 @@
     <ProjectGuid>{C1A81A26-C4C6-4F77-9298-C53E9F755707}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Visualizador2</RootNamespace>
+    <RootNamespace>Visualizador</RootNamespace>
     <AssemblyName>Visualizador2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -61,17 +61,21 @@
     </ApplicationDefinition>
     <Compile Include="models\Dados da curva.designer.cs" />
     <Compile Include="models\Model.cs" />
+    <Compile Include="viewModels\EixoViewModel.cs" />
+    <Compile Include="viewModels\FiltroViewModel.cs" />
+    <Compile Include="viewModels\MainViewModel.cs" />
+    <Compile Include="viewModels\PropriedadesViewModel.cs" />
     <Compile Include="views\EixoControl.xaml.cs">
       <DependentUpon>EixoControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="views\Escala.cs" />
+    <Compile Include="views\Utils.cs" />
     <Compile Include="views\FiltroControl.xaml.cs">
       <DependentUpon>FiltroControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="views\PropriedadesControl.xaml.cs">
       <DependentUpon>PropriedadesControl.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -79,7 +83,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -124,7 +128,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="models\Dados da curva.xml" />
+    <None Include="models\Dados da curva.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

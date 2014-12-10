@@ -11,9 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Visualizador2.models;
+using Visualizador.viewModels;
 
-namespace Visualizador2.views
+namespace Visualizador.views
 {
     public delegate void FiltroHandler(object sender, decimal pos);
     /// <summary>
@@ -21,26 +21,24 @@ namespace Visualizador2.views
     /// </summary>
     public partial class FiltroControl : UserControl
     {
+        public event Action<object, EventArgs> ClicouRestaurar;
+
+        public event Action<object, EventArgs> InseriuCoordenada;
+
         public FiltroControl()
         {
             InitializeComponent();
-
-
         }
-
-        public event FiltroHandler InseriuFiltroMinX;
-        public event FiltroHandler InseriuFiltroMaxX;
-        public event FiltroHandler InseriuFiltroMinY;
-        public event FiltroHandler InseriuFiltroMaxY;
-
-        public int PontosNaEscalaXMin { get; set; }
-        public int PontosNaEscalaXMax { get; set; }
-        public int PontosNaEscalaYMin { get; set; }
-        public int PontosNaEscalaYMax { get; set; }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ((Model)DataContext).RestaurarFiltro();
+            var dataContext = DataContext;
+            if (ClicouRestaurar != null) ClicouRestaurar(this, new EventArgs());
+        }
+
+        private void OnSourceUpdated(object sender, DataTransferEventArgs e)
+        {
+            if (InseriuCoordenada != null) InseriuCoordenada(this, new EventArgs());
         }
     }
 }

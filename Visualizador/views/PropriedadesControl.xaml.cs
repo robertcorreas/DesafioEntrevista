@@ -13,8 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Visualizador2.views
+namespace Visualizador.views
 {
+    public enum Escala
+    {
+        Normal,
+        Logaritmica
+    }
+
+    public class SelecionouEscalaArgs : EventArgs
+    {
+        public Escala escala;
+    }
+
     /// <summary>
     /// Interaction logic for PropriedadesControl.xaml
     /// </summary>
@@ -22,47 +33,32 @@ namespace Visualizador2.views
     {
         public PropriedadesControl()
         {
-            DataContext = this;
             InitializeComponent();
-            CorComboBox.SelectedIndex = 0;
-            TracejadoComboBox.SelectedIndex = 0;
         }
 
-        public LinearGradientBrush CorSelecionada
+        public event Action<object, SelecionouEscalaArgs> SelecionouEscala;
+
+        public event Action<object, EventArgs> Selecionou;
+
+        private void EscalaComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            get { return (LinearGradientBrush)GetValue(CorSelecionadaProperty); }
-            set { SetValue(CorSelecionadaProperty, value); }
-        }
-
-        public static readonly DependencyProperty CorSelecionadaProperty = DependencyProperty.Register(
-            "CorSelecionada", typeof (LinearGradientBrush), typeof (PropriedadesControl), new UIPropertyMetadata(default(LinearGradientBrush)));
-
-        public string TracejadoSelecionado
-        {
-            get { return (string)GetValue(TracejadoSelecionadoProperty); }
-            set { SetValue(TracejadoSelecionadoProperty, value); }
-        }
-
-        public static readonly DependencyProperty TracejadoSelecionadoProperty = DependencyProperty.Register(
-            "TracejadoSelecionado", typeof(string), typeof(PropriedadesControl), new UIPropertyMetadata(default(string)));
-
-        public Escala EscalaSelecionada
-        {
-            get { return (Escala)GetValue(EscalaSelecionadaProperty); }
-            set { SetValue(EscalaSelecionadaProperty, value); }
-        }
-
-        public static readonly DependencyProperty EscalaSelecionadaProperty = DependencyProperty.Register(
-            "EscalaSelecionada", typeof(Escala), typeof(PropriedadesControl), new UIPropertyMetadata(default(Escala)));
-
-        public event SeleciouEscalaHandler SelecionouEscala;
-
-        private void EscalaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (SelecionouEscala != null) SelecionouEscala(this, new SeleciouEscalaArgs
+            try
             {
-                escala = (Escala)((ComboBox)sender).SelectedItem
-            });
+                if (SelecionouEscala != null)
+                    SelecionouEscala(this, new SelecionouEscalaArgs
+                    {
+                        escala = (Escala) ((ComboBox) sender).SelectedItem
+                    });
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+
+        private void ComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Selecionou != null) Selecionou(this, new EventArgs());
         }
     }
 }

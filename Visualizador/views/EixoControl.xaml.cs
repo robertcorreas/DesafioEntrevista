@@ -13,71 +13,30 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Visualizador2.views
+namespace Visualizador.views
 {
     /// <summary>
     /// Interaction logic for EixoControl.xaml
     /// </summary>
     public partial class EixoControl : UserControl
     {
+        public event Action<object, EventArgs> ClicouRestaurar;
+
+        public event Action<object, EventArgs> InseriuCoordenada;
+
         public EixoControl()
         {
-            DataContext = this;
             InitializeComponent();
         }
 
-        public int EixoXMin
-        {
-            get { return (int)GetValue(EixoXMinProperty); }
-            set { SetValue(EixoXMinProperty, value); }
-        }
-
-        public static readonly DependencyProperty EixoXMinProperty = DependencyProperty.Register(
-            "EixoXMin", typeof(int), typeof(EixoControl), new UIPropertyMetadata(default(int)));
-
-        public int EixoXMax
-        {
-            get { return (int)GetValue(EixoXMaxProperty); }
-            set { SetValue(EixoXMaxProperty, value); }
-        }
-
-        public static readonly DependencyProperty EixoXMaxProperty = DependencyProperty.Register(
-            "EixoXMax", typeof(int), typeof(EixoControl), new UIPropertyMetadata(default(int)));
-
-        public int EixoYMin
-        {
-            get { return (int)GetValue(EixoYMinProperty); }
-            set { SetValue(EixoYMinProperty, value); }
-        }
-
-        public static readonly DependencyProperty EixoYMinProperty = DependencyProperty.Register(
-            "EixoYMin", typeof(int), typeof(EixoControl), new UIPropertyMetadata(default(int)));
-
-        public int EixoYMax
-        {
-            get { return (int)GetValue(EixoYMaxProperty); }
-            set { SetValue(EixoYMaxProperty, value); }
-        }
-
-        public static readonly DependencyProperty EixoYMaxProperty = DependencyProperty.Register(
-            "EixoYMax", typeof(int), typeof(EixoControl), new UIPropertyMetadata(default(int)));
-
-        public int PontosNaEscalaXMin { get; set; }
-        public int PontosNaEscalaXMax { get; set; }
-        public int PontosNaEscalaYMin { get; set; }
-        public int PontosNaEscalaYMax { get; set; }
-        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            RestaurarEixo();
+            if (ClicouRestaurar != null) ClicouRestaurar(this, new EventArgs());
         }
 
-        public void RestaurarEixo()
+        private void OnSourceUpdated(object sender, DataTransferEventArgs e)
         {
-            EixoXMin = PontosNaEscalaXMin;
-            EixoXMax = PontosNaEscalaXMax;
-            EixoYMin = PontosNaEscalaYMin;
-            EixoYMax = PontosNaEscalaYMax;
+            if (InseriuCoordenada != null) InseriuCoordenada(this, new EventArgs());
         }
     }
 }

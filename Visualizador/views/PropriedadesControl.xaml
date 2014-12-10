@@ -1,10 +1,11 @@
-﻿<UserControl x:Class="Visualizador2.views.PropriedadesControl"
+﻿<UserControl x:Class="Visualizador.views.PropriedadesControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:views="clr-namespace:Visualizador2.views"
+             xmlns:views="clr-namespace:Visualizador.views"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:viewModels="clr-namespace:Visualizador.viewModels"
              mc:Ignorable="d">
     <UserControl.Resources>
         <x:Array Type="system:String" x:Key="TiposDeLinha">
@@ -81,7 +82,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Label>Cor</Label>
-        <ComboBox x:Name="CorComboBox" Grid.Column="1" ItemsSource="{StaticResource Cores}" SelectedItem="{Binding CorSelecionada}">
+        <ComboBox x:Name="CorComboBox" Grid.Row="0" Grid.Column="1" SelectedIndex="0" ItemsSource="{StaticResource Cores}" SelectedItem="{Binding CorSelecionada}" SelectionChanged="ComboBox_OnSelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="Transparent">
@@ -91,7 +92,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Label Grid.Row="1">Tracejado</Label>
-        <ComboBox x:Name="TracejadoComboBox" Grid.Row="1" Grid.Column="1" ItemsSource="{StaticResource TiposDeLinha}" SelectedItem="{Binding TracejadoSelecionado}">
+        <ComboBox x:Name="TracejadoComboBox" Grid.Row="1" Grid.Column="1" SelectedIndex="0" ItemsSource="{StaticResource TiposDeLinha}" SelectedItem="{Binding TracejadoSelecionado}" SelectionChanged="ComboBox_OnSelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid HorizontalAlignment="Stretch" Background="Transparent">
@@ -101,6 +102,6 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Label Grid.Row="2">Escala</Label>
-        <ComboBox x:Name="EscalaComboBox" Grid.Column="1" Grid.Row="2" SelectedIndex="0" ItemsSource="{Binding Source={StaticResource Escalas}}" SelectedItem="{Binding EscalaSelecionada}" SelectionChanged="EscalaComboBox_SelectionChanged"/>
+        <ComboBox x:Name="EscalaComboBox" Grid.Column="1" Grid.Row="2" SelectedIndex="0" ItemsSource="{Binding Source={StaticResource Escalas}}" SelectedItem="{Binding EscalaSelecionada}" SelectionChanged="EscalaComboBox_OnSelectionChanged"/>
     </Grid>
 </UserControl>
