@@ -16,6 +16,7 @@ namespace Visualizador.views
         public MainWindow()
         {
             mainViewModel = new MainViewModel();
+            Focus();
             InitializeComponent();
             DataContext = mainViewModel;
             eixoControl.DataContext = mainViewModel.eixoViewModel;

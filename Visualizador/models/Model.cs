@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Microsoft.Win32;
 
 namespace Visualizador.models
 {
@@ -19,8 +20,13 @@ namespace Visualizador.models
         
     public Model()
         {
-            string filePath = @"../../models/Dados da curva.xml";
-            model = (Curva) new XmlSerializer(typeof(Curva)).Deserialize(new StreamReader(filePath));
+            var openFileDialog = new OpenFileDialog
+            {
+                Title = "Selecionar Dados do Gráfico",
+                Filter = "Arquivo XML|*.xml"
+            };
+            openFileDialog.ShowDialog();
+            model = (Curva)new XmlSerializer(typeof(Curva)).Deserialize(new StreamReader(openFileDialog.FileName));
         }
     }
 }
