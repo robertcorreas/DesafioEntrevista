@@ -1,6 +1,6 @@
 # Objetivo
 
-O desafio consiste em criar uma aplicação desktop simples em WPF. A construção dessa aplicação tem como objetivo avaliar as seguintes habilitades do candidato:
+O desafio consiste em criar uma aplicação desktop simples em WPF. A construção dessa aplicação tem como objetivo avaliar as seguintes habilidades do candidato:
 
 - Entrosamento com programação orientada a objetos
 - Preocupação com encapsulamento, coesão e acoplamento
@@ -17,7 +17,7 @@ O desafio consiste em criar uma aplicação desktop simples em WPF. A construç�
 
 # A aplicação
 
-Em resumo, trata-se de uma aplicação de janela única com a funcionalidade de visualizar curvas de dados (X e Y) em um gráfico e  alterar sua visualização: escala, cor, espessura, etc.
+Em resumo, trata-se de uma aplicação de janela única com a funcionalidade de visualizar curvas de dados (X e Y) em um gráfico e alterar sua visualização: escala, cor, espessura, etc.
 
 ##  Requisitos
 
